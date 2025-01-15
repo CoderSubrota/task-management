@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "cdn.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Contact {% endblock title %} </title>
+</head>
+<body>
+
+    {% block header %}  <h2 class="text-green-400 text-4xl text-center my-4"> This is contact page. </h2>  {% endblock header %}
+    <h2 class="text-2xl text-purple-700"> This is css </h2>
+
+    <img src="{% static "images/lion.jpeg" %}" alt="lion" class="h-64 w-64 rounded-lg"/>
+    {% include "footer.html" %}
+
+  
+</body>
+</html>

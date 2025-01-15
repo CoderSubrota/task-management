@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "cdn.html" %}
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+  </head>
+  <body class="bg-slate-200 font-serif body">
+    <section>
+      <header>
+        <!-- Navbar start from here  -->
+       {% block header %}  {% endblock header %}
+        <nav class="py-6 mb-10">
+          <div class="navbar flex flex-row justify-between">
+            <div class="leftSide ms-2">
+              <a href="#dashborad" class="text-2xl text-dark-300 font-bold"
+                >Dashboard</a
+              >
+            </div>
+            <div class="rightSide flex flex-row justify-between">
+              <div class="notification mx-5 mt-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-8"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                  />
+                </svg>
+              </div>
+              <div
+                class="profile rounded-full h-12 bordered text-center items-center w-12 bg-blue-300 me-2 ring-offset-2 ring-2"
+              >
+                <p class="text-2xl font-bold text-blue-500 pt-2">B</p>
+              </div>
+            </div>
+          </div>
+        </nav>                                                                       
+        <!-- Navbar end from here  -->
+      </header>
+
+      <main>
+        <!-- Task start from here  -->
+        <div class="grid gird-rows md:grid-cols-2 lg:grid-cols-4 gap-4 mx-3">
+          <div
+            class="totalTask h-45 w-62 rounded-xl bg-white flex flex-row justify-between px-3 py-6 hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="taskLeft text-normal">
+              <p class="uppercase text-gray-500 my-3 font-medium">Total Task</p>
+              <p class="text-4xl font-bold text-dark-500">3</p>
+              <p class="text-gray-500 font-medium">11 last month</p>
+            </div>
+            <div
+              class="taskRight text-center items-center h-12 w-12 bg-blue-300 rounded-full mt-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600 size-7 ms-2.5 mt-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="completedTask h-45 w-62 rounded-xl bg-white flex flex-row justify-between px-3 py-6 hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="completedTaskLeft text-normal">
+              <p class="uppercase text-gray-500 my-3 font-medium">
+                Completed Task
+              </p>
+              <p class="text-4xl font-bold text-dark-500">1</p>
+              <p class="text-gray-500 font-medium">11 last month</p>
+            </div>
+            <div
+              class="completedTaskRight text-center items-center h-12 w-12 bg-green-300 rounded-full mt-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="text-green-500 size-7 ms-2.5 mt-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="taskInProgress h-45 w-62 rounded-xl bg-white flex flex-row justify-between px-3 py-6 hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="taskInProgressLeft text-normal">
+              <p class="uppercase text-gray-500 my-3 font-medium">
+                Task in progress
+              </p>
+              <p class="text-4xl font-bold text-dark-500">1</p>
+              <p class="text-gray-500 font-medium">11 last month</p>
+            </div>
+            <div
+              class="taskInProgressRight text-center items-center h-12 w-12 bg-yellow-200 rounded-full mt-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="text-red-400 size-7 ms-2.5 mt-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="Todos h-45 w-62 rounded-xl bg-white flex flex-row justify-between px-3 py-6 hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="TodosLeft text-normal">
+              <p class="uppercase text-gray-500 my-3 font-medium">Todos</p>
+              <p class="text-4xl font-bold text-dark-500">1</p>
+              <p class="text-gray-500 font-medium">11 last month</p>
+            </div>
+            <div
+              class="TodosRight text-center items-center h-12 w-12 bg-fuchsia-200 rounded-full mt-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-fuchsia-800 size-7 ms-2.5 mt-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Task end from here  -->
+
+        <!-- Task review start from here  -->
+        <div
+          class="taskReview mt-10 mx-3 flex flex-col lg:flex-row justify-between h-fit"
+        >
+          <div
+            class="flex flex-row justify-between h-fit w-full my-4 lg:w-6/12 me-4 px-3 pb-8 ps-7 bg-white rounded-xl hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="taskReviewLeft px-3 py-4">
+              <p class="text-4xl font-bold my-4 mb-8">Todays's Tasks</p>
+
+              <div class="flex flex-row justify-between">
+                <div class="flex flex-row my-3">
+                  <div
+                    class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-green-400 rounded-full"
+                  ></div>
+                  <div class="reviewRightSide">
+                    <p class="font-medium text-gray-500 text-xl">
+                      Completed project proposal
+                    </p>
+                  </div>
+                </div>
+                <div class="statusOfReview ml-52 mt-3">
+                  <p class="font-medium text-gray-500 text-xl">High</p>
+                </div>
+              </div>
+
+              <div class="flex flex-row justify-between">
+                <div class="flex flex-row my-3">
+                  <div
+                    class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-yellow-400 rounded-full"
+                  ></div>
+                  <div class="reviewRightSide">
+                    <p class="font-medium text-gray-500 text-xl">
+                      Review team update
+                    </p>
+                  </div>
+                </div>
+
+                <div class="statusOfReview ml-80 mt-3">
+                  <p class="font-medium text-gray-500 text-xl">Normal</p>
+                </div>
+              </div>
+
+              <div class="flex flex-row justify-between">
+                <div class="flex flex-row my-3">
+                  <div
+                    class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-blue-400 rounded-full"
+                  ></div>
+                  <div class="reviewRightSide">
+                    <p class="font-medium text-gray-500 text-xl">
+                      Prepare for client meeting
+                    </p>
+                  </div>
+                </div>
+
+                <div class="statusOfReview ml-52 mt-3">
+                  <p class="font-medium text-gray-500 text-xl">Low</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full my-4 mb-10 pr-5 lg:w-6/12 px-3 bg-white rounded-xl ps-10 h-fit -pb-8 hover:shadow-xl shadow-blue-500/50 ease-in duration-300"
+          >
+            <div class="taskReviewRight px-3 py-4">
+              <p class="text-4xl font-bold my-4 mb-10">All Tasks</p>
+
+              <div class="grid grid-rows-2 lg:grid-rows-1 grid-flow-col gap-4">
+                <div>
+                  <p class="text-gray-500 font-medium text-xl uppercase">
+                    Task title
+                  </p>
+
+                  <div class="flex flex-row my-3">
+                    <div
+                      class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-green-400 rounded-full"
+                    ></div>
+                    <div class="reviewRightSide">
+                      <p class="font-medium text-gray-500 text-xl">
+                        Test low task
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row my-3">
+                    <div
+                      class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-yellow-400 rounded-full"
+                    ></div>
+                    <div class="reviewRightSide">
+                      <p class="font-medium text-gray-500 text-xl">Test task</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row my-3">
+                    <div
+                      class="reviewLeftSide p-2 h-5 w-5 me-2 mt-1 bg-red-400 rounded-full"
+                    ></div>
+                    <div class="reviewRightSide">
+                      <p class="font-medium text-gray-500 text-xl">Test task</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-gray-500 font-medium text-xl uppercase">
+                    Property
+                  </p>
+                  <p
+                    class="font-medium bg-blue-300 round text-center rounded-xl px-2 w-fit text-blue-500 text-base mt-4"
+                  >
+                    Low
+                  </p>
+                  <p
+                    class="font-medium bg-slate-300 round text-center rounded-xl px-2 w-fit text-dark-200 text-basel mt-4"
+                  >
+                    Normal
+                  </p>
+                  <p
+                    class="font-medium bg-red-200 round text-center rounded-xl px-2 w-fit text-red-600 text-base mt-4"
+                  >
+                    High
+                  </p>
+                </div>
+                <div>
+                  <p class="text-gray-500 font-medium text-xl uppercase">
+                    Team
+                  </p>
+
+                  <div class="flex flex-row mt-1">
+                    <div
+                      class="h-9 w-9 rounded-full bg-blue-300 text-center items-center text-white text-xl pt-1"
+                    >
+                      CA
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-green-300 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      JS
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-yellow-300 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      B
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row mt-1">
+                    <div
+                      class="h-9 w-9 rounded-full bg-red-500 text-center items-center text-white text-xl pt-1"
+                    >
+                      AJ
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-purple-600 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      EV
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-yellow-300 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      B
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row mt-1">
+                    <div
+                      class="h-9 w-9 rounded-full bg-blue-300 text-center items-center text-white text-xl pt-1"
+                    >
+                      CA
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-green-300 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      JS
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-red-500 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      AJ
+                    </div>
+                    <div
+                      class="h-9 w-9 rounded-full bg-yellow-300 text-center -ms-3 text-white items-center text-xl pt-1"
+                    >
+                      B
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-10">
+                  <p class="text-gray-500 font-medium text-xl uppercase">
+                    Created at
+                  </p>
+                  <p class="text-gray-500 font-medium text-xl mt-1">
+                    9 months ago
+                  </p>
+                  <p class="text-gray-500 font-medium text-xl mt-3">
+                    9 months ago
+                  </p>
+                  <p class="text-gray-500 font-medium text-xl mt-3">
+                    10 months ago
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+       {% include "footer.html" %}
+    </section>
+  </body>
+</html>
