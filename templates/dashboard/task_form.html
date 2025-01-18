@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task form </title>
+</head>
+<body class="bg-slate-700">
+    {% include "../cdn.html" %}
+
+{% if message %}
+<p  class="text-center my-4 text-3xl bg-green-400 py-2 rounded-lg  font-medium text-white w-96 m-auto"> {{message}} </p>
+{% endif %}
+
+
+<form   method="post" class="border-spacing-2 ml-80 pb-14 border-indigo-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  rounded-3xl pt-4  w-6/12  text-2xl font-semibold flex flex-col justify-center items-center my-5 ">
+    <p class="font-bold text-4xl text-center w-96 my-3 bg-indigo-500  rounded-md  mx-auto  mt-10 text-white py-6"> Task Form  </p>
+
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="bg-indigo-600 rounded-xl mb-7 px-5 py-2 w-96 text-white mx-4 my-4">Submit</button>
+</form>
+</body>
+</html>
