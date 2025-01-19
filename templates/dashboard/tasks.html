@@ -1,19 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      
+  {% include "../cdn.html" %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks data</title>
 </head>
 <body class="bg-gray-800">
-    
-   {% include "../cdn.html" %}
+
    <h2 class='my-7 text-white text-3xl font-bold text-center'> Task single Data </h2>
   
    <div class="text-white text-center my-3 bg-indigo-600 w-6/12 mx-auto py-8">
     <p>{{task.id}}</p>
     <p> {{task.title}}  </p>
    </div>
+
+   <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with getter_then operation</h2>
+  
+ {% for task in conditions.getter_then  %}
+  
+{% comment %} 
+ >> table head name then __ icontaind for search instead of like
+
+ >> table head name then __ gt, gte , lt and lte 
+
+ >> aagregrate => Count , Sum , Min, Max and Avg 
+
+ >> filter using Q for AND or OR conditions 
+
+ >> get , all , models name dot objects dot get or all call function 
+  
+ {% endcomment %}
+
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+   <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with less_then operation</h2>
+  
+ {% for task in conditions.less_then  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+
+  <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with getter_then_equal operation</h2>
+  
+ {% for task in conditions.getter_then_equal  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+
+  <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with less_then_equal operation</h2>
+  
+
+ {% for task in conditions.less_then_equal  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+
 
  <p  class='my-7 text-white text-2xl font-bold text-center'>Total task : <span class="text-3xl">{{task_count.total_task}}</span></p>
 

@@ -76,6 +76,12 @@ def tasks(request):
     # task_count = Task.objects.annotate(total_task=Count('title')) 
     task_count = Task.objects.aggregate(total_task=Count('id')) 
     icontains = Task.objects.filter(title__icontains='this')
+    
+    getter_then = Task.objects.filter(id__gt=6)
+    less_then = Task.objects.filter(id__lt=10)
+    getter_then_equal = Task.objects.filter(id__gte=10)
+    less_then_equal = Task.objects.filter(id__lte=10)
+    
     context = {
          "tasks":tasks,
          "task":task,
@@ -84,7 +90,13 @@ def tasks(request):
          "and_or2":and_or2,
          "exclude":exclude,
          "task_count":task_count,
-         "icontains":icontains
+         "icontains":icontains,
+         "conditions":{
+             "getter_then":getter_then,
+             "less_then":less_then,
+             "getter_then_equal":getter_then_equal,
+             "less_then_equal":less_then_equal
+         }
     }
     return render(request,'dashboard/tasks.html',context)
 
