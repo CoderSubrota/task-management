@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks data</title>
+</head>
+<body class="bg-gray-800">
+    
+   {% include "../cdn.html" %}
+   <h2 class='my-7 text-white text-3xl font-bold text-center'> Task single Data </h2>
+  
+   <div class="text-white text-center my-3 bg-indigo-600 w-6/12 mx-auto py-8">
+    <p>{{task.id}}</p>
+    <p> {{task.title}}  </p>
+   </div>
+
+ <p  class='my-7 text-white text-2xl font-bold text-center'>Total task : <span class="text-3xl">{{task_count.total_task}}</span></p>
+
+
+<h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with or operation</h2>
+  
+{% for task in and_or2  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+
+<h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with icontains operation</h2>
+  
+{% for task in icontains  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+
+   {% endfor %}
+
+
+
+<h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with and operation</h2>
+  
+{% for task in and_or  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+  {% endfor %}
+
+  <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data with exclude operation</h2>
+  
+
+  {% for task in exclude  %}
+   
+<div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+       <p class="my-2"> {{task.id}}</p>
+       <p class="my-2"> {{task.title}}</p>
+       <p  class="my-2"> {{task.description}}</p>
+       <p  class="my-2"> {{task.due_date}}</p>
+   </div>
+
+  {% endfor %}
+
+
+  <h2 class='my-7 text-white text-3xl font-bold text-center'> All task Data </h2>
+  
+
+   {% for task in tasks  %}
+   
+ <div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+        <p class="my-2"> {{task.title}}</p>
+        <p  class="my-2"> {{task.description}}</p>
+        <p  class="my-2"> {{task.due_date}}</p>
+    </div>
+
+   {% endfor %}
+
+ <h2 class='my-7 text-white text-3xl font-bold text-center'> Filter Data </h2>
+   {% for task in filter_tasks  %}
+   
+    <div class="my-6 bg-indigo-600 py-6 w-6/12 text-center text-white mx-auto">
+        <p class="my-2"> {{task.title}}</p>
+        <p  class="my-2"> {{task.description}}</p>
+        <p  class="my-2"> {{task.due_date}}</p>
+    </div>
+
+   {% endfor %}
+
+
+</body>
+</html>

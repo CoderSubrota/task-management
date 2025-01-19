@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from tasks.form import TaskModelForm
+from tasks.models import Task
+from django.db.models import Q ,Count
 # Create your views here.
 def home(request):
     # return HttpResponse("This is tasks management system")
@@ -62,4 +64,27 @@ def create_task(request):
     context = {'form':form}
     
     return render(request,"dashboard/task_form.html",context)
+
+def tasks(request):
+    tasks = Task.objects.all()
+    task = Task.objects.get(id=2) 
+    # filter_tasks = Task.objects.filter(title='This is', id=2).values() 
+    filter_tasks = Task.objects.filter(title='This is').values() 
+    and_or = Task.objects.filter(Q(title='Modal title') & Q(id=6))
+    and_or2 = Task.objects.filter(Q(title='Modal title') | Q(id=6))
+    exclude =  Task.objects.exclude(Q(title='This is title') |  Q(title='dfd'))
+    # task_count = Task.objects.annotate(total_task=Count('title')) 
+    task_count = Task.objects.aggregate(total_task=Count('id')) 
+    icontains = Task.objects.filter(title__icontains='this')
+    context = {
+         "tasks":tasks,
+         "task":task,
+         "filter_tasks":filter_tasks,
+         "and_or":and_or,
+         "and_or2":and_or2,
+         "exclude":exclude,
+         "task_count":task_count,
+         "icontains":icontains
+    }
+    return render(request,'dashboard/tasks.html',context)
 
