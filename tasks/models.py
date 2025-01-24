@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import DateField
 class Employee(models.Model):
     name = models.CharField(max_length=541)
     email=models.EmailField(unique=True, max_length=221)
@@ -16,13 +16,18 @@ class Task(models.Model):
          on_delete=models.CASCADE,
          default=1
      )
-     assign_to = models.ManyToManyField(Employee, related_name="tasks")
+     assign_to = models.ManyToManyField(Employee,related_name="tasks")
      title=models.CharField(max_length=255)
      description = models.TextField()
-     due_date = models.DateField()
-     is_complete = models.BooleanField(default=False)
+     due_date = models.DateField() 
+     is_complete = models.BooleanField(default=True)
      created_at = models.DateTimeField(auto_now_add=True)
      updated_at = models.DateTimeField(auto_now=True)
+     
+# 22 - 7 = 15 
+# due date 20 => 20 > 15 not over due
+# 12 < 15 over due 
+
 
 # one to one  connection
 class TaskDetails(models.Model):
@@ -47,4 +52,5 @@ class TaskDetails(models.Model):
 class Project(models.Model):
       name = models.CharField(max_length=352)
       start_date=models.DateField()
+      assign_to = models.ManyToManyField(Employee, related_name='projects')
       
